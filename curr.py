@@ -1,4 +1,4 @@
-import bs4, requests, json, csv
+import requests, json, csv
 
 currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 'USD_EUR', 'USD_CNY',
             'USD_KHR', 'USD_HRK', 'USD_CZK', 'USD_CAD', 'USD_AWG']
