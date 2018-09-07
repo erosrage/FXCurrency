@@ -10,6 +10,3 @@ for x in currList:
     page_html = json.loads(page_html)
     page_html = page_html[x]
     print(page_html['val'])
-
-    #New changes
-    
