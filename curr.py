@@ -1,6 +1,5 @@
 import requests, json, csv, time
 
-
 #Currency List
 currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 
             'USD_EUR', 'USD_CNY', 'USD_KHR', 
