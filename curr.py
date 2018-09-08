@@ -10,4 +10,3 @@ for fx in currList:
     page_html = json.loads(page_html)
     page_html = page_html[fx]
     print (fx + ' - ' + str(page_html['val']))
-#changes2
