@@ -1,7 +1,9 @@
 import requests, json, csv
 
-currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 'USD_EUR', 'USD_CNY',
-            'USD_KHR', 'USD_HRK', 'USD_CZK', 'USD_CAD', 'USD_AWG']
+currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 
+            'USD_EUR', 'USD_CNY', 'USD_KHR', 
+            'USD_HRK', 'USD_CZK', 'USD_CAD', 
+            'USD_AWG', 'USD_RUB', 'USD_KES']
 
 for fx in currList:
     my_url = "http://free.currencyconverterapi.com/api/v5/convert?q=" + fx + "&compact=y"
