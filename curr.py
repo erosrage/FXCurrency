@@ -30,4 +30,3 @@ for fx in currList:
         insert = [fx] + [str(page_html)]
         csv_writer.writerow(insert)
         print(fx + ' ' + str(page_html))
-        #done
