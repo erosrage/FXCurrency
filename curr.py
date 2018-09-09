@@ -22,7 +22,7 @@ for fx in currList:
     page_html = json.loads(page_html)
     page_html = page_html[fx]
     page_html = page_html['val']
-    time.sleep(2)
+    time.sleep(1.5)
 
     #CSV stuff
     with open('Output.csv', 'a', newline='') as newFile:
