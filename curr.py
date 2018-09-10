@@ -9,7 +9,7 @@ currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 'USD_EUR', 'USD_CNY',
             'USD_CUC', 'USD_CUP', 'USD_XCD', 'USD_DKK', 'USD_XAF',
             'USD_GMD', 'USD_XPF', 'USD_GEL', 'USD_AED', 'USD_UGX']
 
-#curl request to pull numbers from webportal, parses html and saves to csv file
+#request to pull http from webportal, extracts currency from json, parses to format and saves to csv file
 for fx in currList:
     #loading, extracting & parsing
     my_url = "http://free.currencyconverterapi.com/api/v5/convert?q=" + fx + "&compact=y"
