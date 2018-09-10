@@ -1,6 +1,6 @@
 import requests, json, csv, time
 
-#Currency List
+#Currency List (random order)
 currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 'USD_EUR', 'USD_CNY',
             'USD_KHR', 'USD_HRK', 'USD_CZK', 'USD_CAD', 'USD_AWG',
             'USD_RUB', 'USD_KES', 'USD_XAF', 'USD_TMT', 'USD_KYD',
@@ -11,7 +11,7 @@ currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 'USD_EUR', 'USD_CNY',
 
 #curl request to pull numbers from webportal, parses html and saves to csv file
 for fx in currList:
-    #loading & parsing
+    #loading, extracting & parsing
     my_url = "http://free.currencyconverterapi.com/api/v5/convert?q=" + fx + "&compact=y"
     r = requests.get(my_url)
     page_html = r.text
