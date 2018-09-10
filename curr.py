@@ -19,8 +19,9 @@ for fx in currList:
     page_html = page_html[fx]
     page_html = page_html['val']
     page_html = str(page_html)
+    #this method is used so that the website won't trigger a timeout due to the number of requests in currList
     time.sleep(.15)
-
+    
     #CSV stuff
     with open('Output.csv', 'a', newline='') as newFile:
         csv_writer = csv.writer(newFile)
