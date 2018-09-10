@@ -1,17 +1,13 @@
 import requests, json, csv, time
 
 #Currency List
-currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 
-            'USD_EUR', 'USD_CNY', 'USD_KHR', 
-            'USD_HRK', 'USD_CZK', 'USD_CAD', 
-            'USD_AWG', 'USD_RUB', 'USD_KES',
-            'USD_XAF', 'USD_CAD', 'USD_KYD',
-            'USD_SGD', 'USD_CVE', 'USD_BND',
-            'USD_CLP', 'USD_NZD', 'USD_XOF',
-            'USD_DOP', 'USD_EGP', 'USD_CZK',
-            'USD_ANG', 'USD_CUC', 'USD_CUP',
-            'USD_XCD', 'USD_DKK', 'USD_XAF',
-            'USD_GMD', 'USD_XPF', 'USD_GEL']
+currList = ['USD_GBP', 'USD_JPY', 'USD_MXN', 'USD_EUR', 'USD_CNY',
+            'USD_KHR', 'USD_HRK', 'USD_CZK', 'USD_CAD', 'USD_AWG',
+            'USD_RUB', 'USD_KES', 'USD_XAF', 'USD_TMT', 'USD_KYD',
+            'USD_SGD', 'USD_CVE', 'USD_BND', 'USD_CLP', 'USD_NZD', 
+            'USD_XOF', 'USD_DOP', 'USD_EGP', 'USD_CZK', 'USD_ANG', 
+            'USD_CUC', 'USD_CUP', 'USD_XCD', 'USD_DKK', 'USD_XAF',
+            'USD_GMD', 'USD_XPF', 'USD_GEL', 'USD_AED', 'USD_UGX']
 
 #curl request to pull numbers from webportal, parses html and saves to csv file
 for fx in currList:
@@ -22,11 +18,12 @@ for fx in currList:
     page_html = json.loads(page_html)
     page_html = page_html[fx]
     page_html = page_html['val']
-    time.sleep(.5)
+    page_html = str(page_html)
+    time.sleep(.15)
 
     #CSV stuff
     with open('Output.csv', 'a', newline='') as newFile:
         csv_writer = csv.writer(newFile)
-        insert = [fx] + [str(page_html)]
+        insert = [fx] + [page_html]
         csv_writer.writerow(insert)
-        print(fx + ' ' + str(page_html))
+        print(fx + ' ' + page_html)
