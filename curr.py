@@ -15,10 +15,7 @@ for fx in currList:
     my_url = "http://free.currencyconverterapi.com/api/v5/convert?q=" + fx + "&compact=y"
     r = requests.get(my_url)
     page_html = r.text
-    page_html = json.loads(page_html)
-    page_html = page_html[fx]
-    page_html = page_html['val']
-    page_html = str(page_html)
+    page_html = str(json.loads(page_html)[fx]['val'])
     #this method is used so that the website won't trigger a timeout due to the number of requests in currList
     time.sleep(.10)
 
